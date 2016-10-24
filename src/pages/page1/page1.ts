@@ -4,7 +4,9 @@ import { NavController } from 'ionic-angular';
 
 
 import * as d3 from 'd3';
-//import d3 from 'd3'
+import * as d3select from 'd3-selection'
+import * as d3brush from 'd3-brush'
+//import d3 from 'd3';
 
 @Component({
   selector: 'page-page1',
@@ -13,28 +15,30 @@ import * as d3 from 'd3';
 export class Page1 {
 
   constructor(public navCtrl: NavController) {
-      console.log(d3);
-      /*
-var brush = d3.brush();
-  
-var svg = d3..select("svg");
+     
+ 
+  }
 
-svg.append("g")
+  ngAfterViewInit() {
+      var brush = d3brush.brush();
+    var svg = d3select.select("svg");
+ 
+      
+    svg.append("g")
     .attr("class", "brush")
     .call(brush)
-    .call(brush.move, [[307, 167], [611, 539]])
-  .select(".selection")
+    .call(brush.move, [[307, 167], [311, 239]])
+    .select(".selection")
     .attr("id", "brush-selection");
-    console.log(svg);
-svg.append("clipPath")
-    .attr("id", "brush-clip")
-  .append("use")
-    .attr("xlink:href", "#brush-selection");
 
-svg.select("#color-image")
-    .attr("clip-path", "url(#brush-clip)");
-  console.log(svg);
-*/
+    svg.append("clipPath")
+        .attr("id", "brush-clip")
+      .append("use")
+        .attr("xlink:href", "#brush-selection");
+
+    svg.select("#color-image")
+        .attr("clip-path", "url(#brush-clip)");
   }
+
 
 }

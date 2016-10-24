@@ -9,11 +9,17 @@
 
 <ion-content padding>
   <h3>Exemple 1</h3>
-<svg width="960" height="1452">
-  <filter id="monochrome"><feColorMatrix type="saturate" values="0"></feColorMatrix></filter>
-  <defs><image id="image" width="100%" height="100%" xlink:href="assets/mona-lisa.jpg"></image></defs>
+    
+<svg width="350" height="400">
+  <filter id="monochrome">
+      <feColorMatrix type="saturate" values="0"></feColorMatrix>
+    </filter>
+  <defs>
+      <image id="image" width="100%" height="100%" xlink:href="assets/mona-lisa.jpg"></image>
+</defs>
   <use id="monochrome-image" filter="url(#monochrome)" xlink:href="#image"></use>
   <use id="color-image" xlink:href="#image"></use>
 </svg>
   
 </ion-content>
+
