@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 
-import * as d3 from 'd3';
 import * as d3select from 'd3-selection'
 import * as d3brush from 'd3-brush'
-//import d3 from 'd3';
+
 
 @Component({
   selector: 'page-page1',
