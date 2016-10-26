@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 
-import * as gojs from 'gojs'
+import * as go from 'go'
+//import * as gojs from 'gojs';
 
 
 @Component({
@@ -13,10 +14,10 @@ import * as gojs from 'gojs'
 export class Page3 {
 
   constructor(public navCtrl: NavController) {
-   
+
   }
   ngAfterViewInit() {
-    console.log(gojs);
-
+  
+ 
   }
 }

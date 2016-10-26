@@ -1,0 +1,31 @@
+'use strict';
+
+module.exports = {
+  up: function up(queryInterface, DataTypes) {
+    return queryInterface.createTable('Tokens', {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      kind: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      accessToken: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Users',
+          key: 'id'
+        }
+      }
+    });
+  },
+  down: function down(queryInterface) {
+    return queryInterface.dropTable('Tokens');
+  }
+};
