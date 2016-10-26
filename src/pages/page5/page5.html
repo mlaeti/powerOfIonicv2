@@ -10,5 +10,21 @@
 <ion-content padding>
   <h3>Exemple 5</h3>
 
+    <ion-list>
+        
+  <ion-item>
+    <ion-label color="primary">Texte</ion-label>
+    <ion-input type="text"  [(ngModel)]="texte"></ion-input>
+  </ion-item>
+
+ 
+    <ion-item>
+        <ion-label>Accent</ion-label>
+          <ion-select (ionChange)="selectLanguage($event)" >
+            <ion-option *ngFor="let voice of voicelist" value="{{voice.name}}" >{{voice.name}}</ion-option> 
+          </ion-select>
+    </ion-item>
+
+    </ion-list>
   
 </ion-content>
