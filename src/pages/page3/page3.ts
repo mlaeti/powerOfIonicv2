@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 
-import * as go from 'go'
+//import * as go from 'go'
 //import * as gojs from 'gojs';
 
 
