@@ -29,12 +29,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Exemple 1', component: Page1 },
-      { title: 'Exemple 2', component: Page2 },
-      { title: 'Exemple 3', component: Page3 },
-      { title: 'Exemple 4', component: Page4 },
-      { title: 'Exemple 5', component: Page5 },
-      { title: 'Exemple 6', component: Page6 },
+      { title: 'Exemple 1: plugin D3', component: Page1 },
+      { title: 'Exemple 2: plugin D3', component: Page2 },
+      { title: 'Exemple 3: plugin GOJS', component: Page3 },
+      { title: 'Exemple 4: plugin OCRAD', component: Page4 },
+      { title: 'Exemple 5: plugin responsiveVoice', component: Page5 },
+      { title: 'Exemple 6: plugin annyang', component: Page6 },
       { title: 'Exemple 7', component: Page7 },
       { title: 'Exemple 8', component: Page8 },
       { title: 'Exemple 9', component: Page9 },
