@@ -24,6 +24,6 @@ this.texte = "Hello world";
 selectLanguage(ev: any){
 
      (<any>window).responsiveVoice.speak(this.texte, ev);
-    
+
 }
 }

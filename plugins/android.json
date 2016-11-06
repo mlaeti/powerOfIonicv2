@@ -7,10 +7,16 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
+        },
+        "cordova-plugin-media": {
             "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
         },
         "cordova-plugin-splashscreen": {
@@ -24,13 +30,13 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
-        },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
+        },
+        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
         }
     }

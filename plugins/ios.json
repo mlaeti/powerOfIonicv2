@@ -29,11 +29,17 @@
             "CAMERA_USAGE_DESCRIPTION": " ",
             "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
             "PACKAGE_NAME": "io.ionic.starter"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.powerofionicv2851598"
         }
     }
 }
