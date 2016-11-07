@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "gojs": "registry:dt/gojs#1.6.0+20160323033500"
+  }
+}

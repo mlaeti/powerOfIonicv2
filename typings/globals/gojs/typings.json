@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/a44529fcb1e1cdc0355e71c42a6048de99b57c34/goJS/goJS.d.ts",
+    "raw": "registry:dt/gojs#1.6.0+20160323033500",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/a44529fcb1e1cdc0355e71c42a6048de99b57c34/goJS/goJS.d.ts"
+  }
+}
