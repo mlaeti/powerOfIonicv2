@@ -20,6 +20,44 @@ sel: any;
   constructor(public navCtrl: NavController) {
 
   }
+    /*
+    
+      ngAfterViewInit() {
+  // init for these samples -- you don't need to call this
+    var $ = (<any>window).go.GraphObject.make;  // for conciseness in defining templates
+    this.myDiagram = $((<any>window).go.Diagram, "myDiagramDiv",  // create a Diagram for the DIV HTML element
+                  {
+                    initialContentAlignment: (<any>window).go.Spot.Center,  // center the content
+                    "undoManager.isEnabled": true  // enable undo & redo
+                  });
+    // define a simple Node template
+    this.myDiagram.nodeTemplate =
+      $( (<any>window).go.Node, "Auto",  // the Shape will go around the TextBlock
+        $( (<any>window).go.Shape, "RoundedRectangle", { strokeWidth: 0},
+          // Shape.fill is bound to Node.data.color
+          new (<any>window).go.Binding("fill", "color")),
+        $((<any>window).go.TextBlock,
+          { margin: 8 },  // some room around the text
+          // TextBlock.text is bound to Node.data.key
+          new (<any>window).go.Binding("text", "key"))
+      );
+    // but use the default Link template, by not setting Diagram.linkTemplate
+    // create the model data that will be represented by Nodes and Links
+    this.myDiagram.model = new (<any>window).go.GraphLinksModel(
+    [
+      { key: "Alpha", color: "lightblue" },
+      { key: "Beta", color: "orange" },
+      { key: "Gamma", color: "lightgreen" },
+      { key: "Delta", color: "pink" }
+    ],
+    [
+      { from: "Alpha", to: "Beta" },
+      { from: "Alpha", to: "Gamma" },
+      { from: "Beta", to: "Beta" },
+      { from: "Gamma", to: "Delta" },
+      { from: "Delta", to: "Alpha" }
+    ]);
+  }*/
 
   ngAfterViewInit() {
       
@@ -40,7 +78,7 @@ sel: any;
         { locationSpot: (<any>window).go.Spot.Center,  // Node.location is the center of the Shape
           locationObjectName: "SHAPE",
           selectionAdorned: false,
-          selectionChanged: this.nodeSelectionChanged },
+          selectionChanged: this.nodeSelectionChanged}, 
         $((<any>window).go.Panel, "Auto",
           $((<any>window).go.Shape, "Ellipse",
             { name: "SHAPE",
@@ -51,7 +89,7 @@ sel: any;
               portId: "" },  // so links will go to the shape, not the whole node
             new (<any>window).go.Binding("fill", "isSelected", function(s, obj) { return s ? "red" : obj.part.data.color; }).ofObject()),
           $((<any>window).go.TextBlock,
-            new (<any>window).go.Binding("text", "distance", function(d) { return (d === Infinity) ?  "INF" : d | 0;/*if (d === Infinity) return "INF"; else return d | 0;*/ }))),
+            new (<any>window).go.Binding("text", "distance", function(d) { return (d === Infinity) ?  "INF" : d | 0; }))),
         $((<any>window).go.TextBlock,
           new (<any>window).go.Binding("text")));
     // define the Link template
@@ -288,35 +326,38 @@ generateGraph() {
     }
     return s;
   }
+
     
-    
-    
+
   // When a node is selected show distances from the first selected node.
   // When a second node is selected, highlight the shortest path between two selected nodes.
   // If a node is deselected, clear all highlights.
- nodeSelectionChanged(node) {
-    var diagram = node.diagram;
+    nodeSelectionChanged(node) {
+
+    var diagram = node.diagram;    
     if (diagram === null) return;
     diagram.clearHighlighteds();
     if (node.isSelected) {
       // when there is a selection made, always clear out the list of all paths
-      var sel = document.getElementById("myPaths");
+      var sel = (document.getElementById("myPaths") as HTMLSelectElement);
       sel.innerHTML = "";
       // show the distance for each node from the selected node
       var begin = diagram.selection.first();
-      this.showDistances(begin);
+
+    //  this.showDistances(begin); // LMO comment
       if (diagram.selection.count === 2) {
         var end = node;  // just became selected
-        // highlight the shortest path
-        this.highlightShortestPath(begin, end);
+        // highlight the shortest path 
+        //this.highlightShortestPath(begin, end);// LMO comment
         // list all paths
-        this.listAllPaths(begin, end);
+     //   this.listAllPaths(begin, end);// LMO comment
       }
     }
   }
 
 
 
+    
 // Have each node show how far it is from the BEGIN node.
  showDistances(begin) {
     // compute and remember the distance of each node from the BEGIN node
@@ -334,7 +375,7 @@ generateGraph() {
 
 // Highlight links along one of the shortest paths between the BEGIN and the END nodes.
   // Assume links are unidirectional.
- highlightShortestPath(begin, end) {
+highlightShortestPath(begin, end) {
     this.highlightPath(this.findShortestPath(begin, end));
   }
   
